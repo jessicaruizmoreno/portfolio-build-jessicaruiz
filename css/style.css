@@ -1,0 +1,371 @@
+/****************
+Theme Name: portfolio-build-jr
+Author: Jessica Ruiz
+Version: 1.0
+******************************/
+
+/*CSS Color Varibles*/
+/******not orinal colors; need to edit later******/
+:root{
+--light: #fff;
+--dark: #000;
+--grey: #666;
+--dark-blue: #263276;
+--light-blue:#2196f3;
+--gold: #ffc107;
+--shadow: 0 1px 5px rgba(104,104,104,0.8);
+}
+
+/*Global Styles*/
+body{
+	margin:0;
+	/*edit fonts later*/
+	font-family: Arial, Helvetica, sans-serif;
+	background:var(--light);
+	font-size: 1rem;
+	line-height: 1.5;
+	text-align: center;
+}
+
+img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+
+.hidden{
+	display:none;
+}
+
+button{
+	border:none;
+}
+
+
+
+/*Typography*/
+h1,h2,h3,h4,p{
+	margin: 0;
+	padding: 1rem 0;
+}
+
+
+
+
+
+
+/*Top Container*/
+.top-container{
+	display: grid;
+	grid-template-areas: 
+	"logo logo main-nav"
+	"logo logo main-nav";
+	grid-template-columns: 1fr 100fr;
+	position: absolute;
+	grid-gap: 1em
+}
+
+#logo{
+
+	background: url(../assets/images/logo.svg) center no-repeat;
+	width: 3em;
+	height: 3em;
+	margin: 1.7em;
+
+}
+
+
+/*Navigation*/
+
+.main-nav{
+	margin-top: 1em;
+
+}
+
+.main-nav li{
+margin: 3em;
+
+}
+
+
+
+.main-nav #button{
+	overflow: hidden;
+	background: url(../assets/images/burger.svg) no-repeat;
+	background-size: contain;
+	width: 30px;
+	height: 30px;
+	transition: all 400ms ease;
+	float: right;
+	position: relative;
+    z-index: 100000;
+
+  }
+
+ button#button.expanded{
+ 	display: none;
+ } 
+
+
+
+button.expanded {
+background-size: 27px;
+z-index: 10000;
+
+}
+
+.main-nav ul{
+	display: none;
+}
+
+
+#buttonClose{
+	margin: 1.5em;
+	overflow: hidden;
+	width: 28px;
+	height: 28px;
+	transition: all 400ms ease;
+	float: right;
+	position: relative;
+    z-index: 100000;
+	background: url(../assets/images/close.svg) no-repeat;
+	background-size: contain;
+	
+
+}
+
+
+
+
+
+ul.slideToggle{
+	display: block;
+    padding: 0;
+    list-style: none;
+    background: red;
+    position: absolute;
+    z-index: 10000;
+    width: 100%;
+    left: 0;
+    margin-top: 0;
+
+
+}
+
+
+
+
+
+
+.main-nav a {
+	display:block;
+	text-decoration: none;
+	padding: 0.8rem;
+	color:var(--dark);
+	text-transform: uppercase;
+	font-size:1.1rem;
+
+}
+
+
+
+/*Banner*/
+
+#banner{
+
+	min-height: 33em;
+	background: url(../assets/images/hero.jpg);
+	background-size: cover;
+	background-position: center;
+	z-index: -1;
+	width: 100%;
+
+}
+
+
+#banner .container-text{
+	padding: 5em 1.5em 1.5em 1.5em;
+}
+
+
+/*Social Media*/
+.social-links{
+	 display:grid;
+	 grid-gap:1em;
+	 list-style: none;
+	 grid-template-columns: repeat(3, 1fr);
+	
+}
+
+
+/*Button Styles*/
+.btn-hero{
+	margin:.5em 0;
+	display: inline-block;
+	background:var(--dark-blue);
+	color: var(--light);
+	text-decoration: none;
+	padding:1em 2em;
+}
+
+.btn:hover{
+	background: var(--light-blue);
+}
+
+
+
+
+
+
+
+/* About Me*/
+#aboutMe{
+	background: blue;
+	color:var(--light);
+}
+
+#aboutMe .container-text, #contact .container-text{
+	padding:0 2em;
+}
+
+
+
+/*Portfolio-Gallery*/
+#portfolio{
+	padding:2em 1em 1em;
+}
+
+
+#portfolio > ul {
+		list-style: none;
+		padding:0;
+		margin: 0;
+
+}
+
+
+#portfolio li{
+	margin-bottom: 1em;
+	background: #fff;
+	color:#333;
+
+}
+
+.box .box-title{
+	padding:1.5em;
+}
+
+
+
+
+
+/*Contact Form*/
+#contact{
+	background: pink;
+	padding: 2em;
+}
+
+#contact .box:first-child{
+	background-color: blue;
+} 
+
+
+
+/*Footer*/
+
+
+.social-links2 li{
+	list-style: none;
+	display: inline-block;
+	padding: 0 2em 0 2em;
+}
+
+
+
+
+/*Media Queries*/
+@media(min-width: 700px){
+	.grid {
+		display:grid;
+		
+		
+	}
+
+	.container-title,{
+		grid-column: 2/4;
+}
+
+#portfolio{
+	grid-template-columns: 1fr 48%;
+	grid-gap: 2em;
+}
+
+
+#contact{
+	grid-template-columns: 1fr 1fr;
+
+}
+
+
+
+
+
+
+
+}
+
+@media(min-width: 1024px){
+
+.grid {
+		display:grid;
+		
+		
+	}
+
+		.container-title,{
+		grid-column: 2/4;
+}
+
+#contact{
+	grid-template-columns: 1fr 1fr;
+
+}
+#portfolio{
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 2em;
+}
+
+
+.main-nav #button{
+
+display: none;
+
+}
+
+#buttonClose{
+	display: none;
+}
+
+.main-nav ul{
+	display: grid;
+	grid-template-columns: 10em 10em 10em;
+	justify-content: end;
+	
+}
+
+.main-nav li{
+	list-style: none;
+	margin:0em;
+
+}
+
+
+}
+
+@media(min-width: 1400px){
+	#portfolio{
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 2em;
+}
+}
