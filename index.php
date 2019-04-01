@@ -198,12 +198,13 @@
 
 			<p>
 				<label>Subject</label>
-				<input type="text" name="subject" placeholder="Subject" required>
+				<input type="text"  name="subject" placeholder="Subject" required>
 			</p>
 		
 			<p>
 				<label>Email</label>
-				<input type="text" name="mail" placeholder="Your e-mail" required>
+				<input type="text" id="mail" class="mail" name="mail" placeholder="Your e-mail" >
+				<span class="error" aria-live="polite"></span>
 			</p>
 				
 			
