@@ -21,6 +21,7 @@ button.addEventListener("click", hamburgerMenu, false);
 closeButton.addEventListener("click", hamburgerMenu, false);
 
 
+
 //validation errors for html5  required data form 
 
 
