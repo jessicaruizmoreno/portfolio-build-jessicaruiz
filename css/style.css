@@ -272,7 +272,9 @@ ul.slideToggle{
 
 
 
-input.mail {
+
+
+input.mail, input.subject, input.name , input.message{
   -webkit-appearance: none;
 
   width: 100%;
@@ -287,11 +289,17 @@ input.mail {
 }
 
 
+
+
+
+
 /*Invalid form fields*/
-input.invalid{
+input#mail.invalid, input#name.invalid, input#subject.invalid, input#message.invalid{
   border-color: #900;
   background-color: #FDD;
 }
+
+
 
 input:focus.invalid {
   outline: none;
@@ -299,7 +307,7 @@ input:focus.invalid {
 
 
 /* This is the style of our error messages */
-.error {
+.errorEmail, .errorName, .errorSubject, .errorMessage {
   width  : 100%;
   padding: 0;
  
@@ -312,7 +320,7 @@ input:focus.invalid {
   box-sizing: border-box;
 }
 
-.error.active {
+.errorEmail.active, .errorName.active, .errorSubject.active,.errorMessage.active {
   padding: 0.3em;
 }
 

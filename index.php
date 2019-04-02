@@ -191,26 +191,30 @@
 
 	<form class="box" action="process-mailer.php" method="post">
 			<div class="container-text">
-			<p>
+				<p>
 				<label>Name</label>
-				<input type="text" name="name" placeholder="Full Name" required>
+				<input type="text" id="name" name="name" class="name" placeholder="Full Name"  required>
+				<span class="errorName" aria-live="polite"></span>
 			</p>
 
 			<p>
 				<label>Subject</label>
-				<input type="text"  name="subject" placeholder="Subject" required>
+				<input type="text"  id="subject" name="subject" class="subject" placeholder="Subject" required>
+				<span class="errorSubject" aria-live="polite"></span>
 			</p>
 		
 			<p>
 				<label>Email</label>
-				<input type="text" id="mail" class="mail" name="mail" placeholder="Your e-mail" >
-				<span class="error" aria-live="polite"></span>
+				<input type="text" id="mail" class="mail" name="mail" placeholder="Your e-mail" required>
+				<span class="errorEmail" aria-live="polite"></span>
 			</p>
 				
 			
 				<p>
 				<label>Message</label>
-				<textarea name="message" row="5" placeholder="Message" required></textarea>
+				<textarea name="message" row="5" placeholder="Message" id="message" class="message" required></textarea>
+				<span class="errorMessage" aria-live="polite"></span>
+
 				</p>
 		</div>
 
