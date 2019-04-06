@@ -1,7 +1,7 @@
 <?php 
 if(isset($_POST['submit'])){
     $to = "hello@jessicaruiz.ca"; 
-    $from = $_POST['mail']; 
+    $from = $_POST['email']; 
     $name = $_POST['name'];
     $sub = $_POST['subject'];
     $message = $_POST['message'];
@@ -21,3 +21,4 @@ mail($to, $sub, $txt, $headers);
     header("Location: index.php?mailsent");
     }
 ?>
+
