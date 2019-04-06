@@ -7,9 +7,85 @@
 	<title>Jessica Ruiz - Web Designer & Developer based in London, Ontario</title>
 	<meta name="description" content="Hiring? Don't look any further. I am here and ready to find my dream job in web design or front-end development. Based in London, Ontario. Check out my work.">
 
+<script name="mail error handling">
+    
+    document.addEventListener('DOMContentLoaded', function () { 
+        
+    document.getElementById("contact_form").onsubmit = function () {
+    var nameInput = document.forms["contact_form"]["name"].value;
+    var subjectInput = document.forms["contact_form"]["subject"].value;
+    var emailInput = document.forms["contact_form"]["email"].value;
+    var messageInput = document.forms["contact_form"]["message"].value;
+
+
+
+    var submit = true;
+
+
+
+
+    if (nameInput == null || nameInput == "") {
+        nameError = "Please enter your name";
+        var popUp = document.querySelector('#name_error');
+        popUp.style.backgroundColor = '#ff0000';
+        document.getElementById("name_error").innerHTML = nameError;
+        submit = false;
+        
+    
+    }
+
+ 	if (subjectInput == null || subjectInput == "" ) {
+        subjectError = "Please enter a subject";
+        var popUp = document.querySelector('#subject_error');
+        popUp.style.backgroundColor = '#ff0000';
+        document.getElementById("subject_error").innerHTML = subjectError;
+        submit = false;
+    }
+
+
+    if (emailInput == null || emailInput == ""  ) {
+        emailError = "Please enter your email";
+        var popUp = document.querySelector('#email_error');
+        popUp.style.backgroundColor = '#ff0000';
+        document.getElementById("email_error").innerHTML = emailError;
+        submit = false;
+    }
+
+
+    if (messageInput == null || messageInput == "") {
+        messageError = "Please enter a message";
+        var popUp = document.querySelector('#message_error');
+        popUp.style.backgroundColor = '#ff0000';
+        document.getElementById("message_error").innerHTML = messageError;
+        submit = false;
+    }
+  
+
+    return submit;
+}
+
+function removeErrorPop() {
+document.getElementById(this.id + "_error").style.display = 'none';
+
+}
+
+document.getElementById("name").onkeyup = removeErrorPop;
+document.getElementById("subject").onkeyup = removeErrorPop;
+document.getElementById("email").onkeyup = removeErrorPop;
+document.getElementById("message").onkeyup = removeErrorPop;
+
+    
+ 
+    });       
+ </script>
+
+
+
 <link href="./css/style.css" rel="stylesheet" type="text/css" media="screen, projection">
 
+
 </head>
+
 
 <body>
 
@@ -66,7 +142,7 @@
 				<h2> Are you hiring? Don't look any further!</h2>
 			
 	
-						<p> I have a strong passion for anything web related. Development and Design is my true dream job</p>
+						<p> I have a strong passion for anything web related. Development and Design is my true dream job!</p>
 					
 						<a href="file:///Users/jessicaruiz/Desktop/Portfolio%20NEW/portfolio-build-jessicaruiz/assets/ruiz_resume2018.pdf" class="btn-hero">Resume</a>
 						</div>
@@ -189,38 +265,16 @@
 	</div>
 </div>
 
-	<form class="box" action="process-mailer.php" method="post">
-			<div class="container-text">
-			<p>
-				<label>Name</label>
-				<input type="text" name="name" placeholder="Full Name" required>
-			</p>
+<form method="post" action="process-mailer.php" name="contact_form" id="contact_form">
+    <input type="text" id="name" name="name" aria-describedby="name-format" placeholder="Full Name"> <span class="error"><p id="name_error"></p></span>
+    <input type="text" id="subject" name="subject" placeholder="Subject"> <span class="error"><p id="subject_error"></p></span>
+    
+    <input type="email" id="email" name="email" placeholder="Email"> <span class="error"><p id="email_error"></p></span>
 
-			<p>
-				<label>Subject</label>
-				<input type="text"  name="subject" placeholder="Subject" required>
-			</p>
-		
-			<p>
-				<label>Email</label>
-				<input type="text" id="mail" class="mail" name="mail" placeholder="Your e-mail" >
-				<span class="error" aria-live="polite"></span>
-			</p>
-				
-			
-				<p>
-				<label>Message</label>
-				<textarea name="message" row="5" placeholder="Message" required></textarea>
-				</p>
-		</div>
+    <input type="textarea" id="message" name="message" placeholder="Message"> <span class="error"><p  id="message_error"></p></span>
 
-		<div class="full-container">
-			<p>
-				<button type="submit" name="submit">Submit</button>
-			</p>
-		</div>
-	</div>
-		</form>
+    <button id="submit" type="submit" name="submit" >Submit</button>
+</form>
 
 
 </section>	
@@ -252,3 +306,5 @@
 <script src="./js/main.js"></script>
 </body>
 </html>
+
+
