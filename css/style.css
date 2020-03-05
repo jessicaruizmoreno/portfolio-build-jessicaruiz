@@ -1,7 +1,10 @@
 :root {
-  --primary: #81899b;
-  --accent: #302e24;
-  --warn: #dfa612;
+  --light: #ffffff;
+  --dark: #000000;
+  --grey: #666666;
+  --dark-blue: #263276;
+  --light-blue: #2196f3;
+  --gold: #ffc107;
   font-size: 16px; }
 
 /*Global Styles*/
